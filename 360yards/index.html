@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our real estate services to find your dream home or list your property." />
+  <title>350YARDS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .marquee {
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: marquee 10s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-50 to-white font-sans min-h-screen">
+  <!-- Include Google Font in your <head> section -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+
+<!-- Header -->
+<header class="bg-blue-900 text-white text-center py-6">
+  <div class="container mx-auto px-4 flex items-center justify-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight" style="font-family: 'Poppins', sans-serif; letter-spacing: 2px; text-shadow: 2px 2px 8px rgba(30,58,138,0.15), 0 1px 0 #fff; color: #fbbf24;">
+      Welcome to 360YARDS
+    </h1>
+  </div>
+</header>
+
+
+  <!-- Ad Section -->
+  <section class="bg-gradient-to-r from-teal-100 to-gray-200 text-center py-2 mx-4 mt-4 rounded-lg shadow-md">
+    <p class="text-gray-800 font-medium marquee">
+      Discover Your Dream Home Today! Exclusive deals on properties and rentals. Contact us now!
+    </p>
+  </section>
+
+  <!-- Contact Button -->
+  <div class="flex justify-end mx-4 mt-2 relative z-50">
+    <button id="openModalBtn" class="bg-blue-600 text-white py-1 px-4 rounded-md hover:bg-blue-700">
+      Contact
+    </button>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-40">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full mx-4 relative z-50">
+      <h2 class="text-2xl font-bold mb-4 text-center text-blue-800">Get in Touch</h2>
+      <form id="contactForm" class="space-y-4">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-2 border rounded-md" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required class="w-full p-2 border rounded-md" />
+        </div>
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required pattern="\d{10}" title="Please enter a 10-digit phone number" class="w-full p-2 border rounded-md" />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Message (Optional)</label>
+          <textarea id="message" name="message" class="w-full p-2 border rounded-md"></textarea>
+        </div>
+        <div class="flex justify-between">
+          <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Submit</button>
+          <button type="button" id="closeModalBtn" class="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-600">Close</button>
+        </div>
+      </form>
+      <p id="formMessage" class="mt-4 text-center text-gray-600" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <section class="container mx-auto my-8 px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Free Services -->
+<div class="flex flex-col items-center">
+  <h2 class="text-3xl font-bold mb-6 text-blue-800 text-center">DirectConnect</h2>
+  <div class="space-y-6 w-full max-w-lg">
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Buy/sell</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/buy.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Buy/Sell</h3>
+          <p class="text-xs sm:text-sm">Quickly buy or sell any property type.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View details</a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Rent</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/rent.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Rent</h3>
+          <p class="text-xs sm:text-sm">Discover your next rental property here.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Community care</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/community.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Community care</h3>
+          <p class="text-xs sm:text-sm">Join hands in community-driven activities like tree planting and social initiatives</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Legal compliance</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/photo.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">View360</h3>
+          <p class="text-xs sm:text-sm">Experience every angle of your property with immersive 360° virtual tours and pro photography</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Paid Services -->
+<div class="flex flex-col items-center">
+  <h2 class="text-3xl font-bold mb-6 text-blue-800 text-center">PrimeConnect</h2>
+  <div class="space-y-6 w-full max-w-lg">
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Apartment</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/Apartment.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Apartment</h3>
+          <p class="text-xs sm:text-sm">Find the perfect apartment for your lifestyle.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Plot</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/plot.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Plot</h3>
+          <p class="text-xs sm:text-sm">Start your journey with the right piece of land.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">commercial</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/commercial.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Commercial</h3>
+          <p class="text-xs sm:text-sm">Find commercial properties to grow your venture.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-xl border border-blue-200 h-40 sm:h-56 service-card w-full flex flex-col relative overflow-hidden group" role="article">
+      <span class="sr-only">Tenant</span>
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110" style="background-image: url('images/tenants.jpg');"></div>
+      <div class="relative z-10 p-4 sm:p-6 bg-black bg-opacity-50 text-blue-100 flex flex-col justify-between">
+        <div>
+          <h3 class="text-lg sm:text-xl font-semibold">Resident</h3>
+          <p class="text-xs sm:text-sm">Helping tenants with apartment services and support.</p>
+        </div>
+        <a href="#contactModal" class="mt-2 sm:mt-4 inline-block bg-gray-100 text-blue-800 py-1 px-3 rounded-md text-xs sm:text-sm hover:bg-gray-200">View Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </section>
+
+  <!-- Download App Section -->
+  <section class="container mx-auto my-8 px-4 text-center">
+    <h2 class="text-2xl font-bold mb-4 text-blue-800">Download our app</h2>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+      <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer" aria-label="Download on Google Play" class="transform transition-transform duration-300 hover:scale-105">
+        <img alt="Download on Google Play" class="h-12 md:h-14" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_Badge_EN.svg.png">
+      </a>
+      <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer" aria-label="Download on App Store" class="transform transition-transform duration-300 hover:scale-105">
+        <img alt="Download on App Store" class="h-12 md:h-14" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png">
+      </a>
+    </div>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    const modal = document.getElementById('contactModal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+
+    openModalBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+      contactForm.reset();
+      formMessage.textContent = '';
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.name.value;
+      formMessage.textContent = `Thank you, ${name}! We'll contact you soon.`;
+      formMessage.className = 'mt-4 text-center text-green-600';
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* General Styles */
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #eff6ff, #ffffff); /* Matches from-blue-50 to-white */
+  margin: 0;
+}
+
+/* Container for centered content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header */
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');*/
+header {
+  background-color: #1e3a8a; /* Dark blue background */
+  color: white;
+  text-align: center;
+  padding: 24px 0;
+  font-family: 'Poppins', sans-serif; /* Modern clean font */
+  margin: 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 1.875rem; /* Equivalent to Tailwind's text-3xl */
+  font-weight: 700;     /* Bold */
+  margin: 0;
+}
+
+
+/* Ad Section */
+.ad-section {
+  background: linear-gradient(to right, #ccfbf1, #e5e7eb); /* Matches from-teal-100 to-gray-200 */
+  text-align: center;
+  padding: 32px 16px;
+  margin: 24px 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Matches shadow-md */
+}
+
+.ad-section h2 {
+  font-size: 1.25rem; /* Matches text-xl */
+  font-weight: 600; /* Matches font-semibold */
+  color: #1f2937; /* Matches text-gray-800 */
+}
+
+.ad-section p {
+  color: #4b5563; /* Matches text-gray-600 */
+}
+
+.ad-section .contact-button-container {
+  margin-top: 16px; /* Matches mt-4 */
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Services Section */
+.services-section {
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px; /* Matches gap-6 */
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr 1fr; /* Matches md:grid-cols-2 */
+  }
+}
+
+.service-card {
+  background-color: white; /* Matches bg-white */
+  padding: 24px; /* Matches p-6 */
+  border-radius: 8px; /* Matches rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Matches shadow-md */
+  border: 1px solid #bfdbfe; /* Matches border-blue-200 */
+  width: 100%;
+  max-width: 1200px !important;
+  min-width: 90vw !important;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .service-card {
+    min-width: 80vw !important;
+    max-width: 1000px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-card {
+    min-width: 70vw !important;
+    max-width: 900px !important;
+  }
+}
+
+.service-card h2 {
+  font-size: 1.5rem; /* Matches text-2xl */
+  font-weight: 700; /* Matches font-bold */
+  color: #1e40af; /* Matches text-blue-800 */
+  margin-bottom: 24px; /* Matches mb-6 */
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px; /* Matches mb-6 */
+}
+
+.service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-item img {
+  width: 40px; /* Matches w-10 */
+  height: 40px; /* Matches h-10 */
+  margin-right: 16px; /* Matches mr-4 */
+}
+
+.service-item h3 {
+  font-size: 1.125rem; /* Matches text-lg */
+  font-weight: 600; /* Matches font-semibold */
+}
+
+.service-item p {
+  color: #4b5563; /* Matches text-gray-600 */
+}
+
+/* Contact Modal */
+#contactModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Matches bg-black bg-opacity-50 */
+  display: none; /* Matches hidden */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#contactModal.show {
+  display: flex;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 24px; /* Matches p-6 */
+  border-radius: 8px; /* Matches rounded-lg */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Matches shadow-md */
+  max-width: 32rem; /* Matches max-w-lg */
+  width: 100%;
+  margin: 16px;
+}
+
+.modal-content h2 {
+  font-size: 1.5rem; /* Matches text-2xl */
+  font-weight: 700; /* Matches font-bold */
+  color: #1e40af; /* Matches text-blue-800 */
+  text-align: center;
+  margin-bottom: 16px; /* Matches mb-4 */
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Matches space-y-4 */
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem; /* Matches text-sm */
+  font-weight: 500; /* Matches font-medium */
+  color: #374151; /* Matches text-gray-700 */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px; /* Matches p-2 */
+  border: 1px solid #d1d5db; /* Matches border */
+  border-radius: 6px; /* Matches rounded-md */
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3b82f6; /* Matches focus:border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* Matches focus:ring-blue-500 */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#formMessage {
+  margin-top: 16px; /* Matches mt-4 */
+  text-align: center;
+  color: #4b5563; /* Matches text-gray-600 */
+}
+
+#formMessage.success {
+  color: #16a34a; /* Matches text-green-600 */
+}
+
+/* Download Section */
+.download-section {
+  margin: 32px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.download-section h2 {
+  font-size: 1.5rem; /* Matches text-2xl */
+  font-weight: 700; /* Matches font-bold */
+  color: #1e40af; /* Matches text-blue-800 */
+  margin-bottom: 16px; /* Matches mb-4 */
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px; /* Matches space-x-4 */
+}
+
+/* Buttons */
+button, a.button {
+  padding: 8px 16px; /* Matches py-2 px-4 */
+  border-radius: 6px; /* Matches rounded-md */
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"], a.button.contact, a.button.ios {
+  background-color: #2563eb; /* Matches bg-blue-600 */
+}
+
+button[type="submit"]:hover, a.button.contact:hover, a.button.ios:hover {
+  background-color: #1d4ed8; /* Matches hover:bg-blue-700 */
+}
+
+button#closeModalBtn {
+  background-color: #6b7280; /* Matches bg-gray-500 */
+}
+
+button#closeModalBtn:hover {
+  background-color: #4b5563; /* Matches hover:bg-gray-600 */
+}
+
+a.button.android {
+  background-color: #16a34a; /* Matches bg-green-600 */
+}
+
+a.button.android:hover {
+  background-color: #15803d; /* Matches hover:bg-green-700 */
+}
+
+/* Make all service cards much longer and responsive */
+.service-card,
+.bg-white.rounded-lg.shadow-xl.border.border-blue-200[role="article"] {
+  width: 100%;
+  min-width: 0;
+  max-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .service-card,
+  .bg-white.rounded-lg.shadow-xl.border.border-blue-200[role="article"] {
+    width: 700px;
+    max-width: 90vw;
+  }
+}
+@media (min-width: 1024px) {
+  .service-card,
+  .bg-white.rounded-lg.shadow-xl.border.border-blue-200[role="article"] {
+    width: 1200px;
+    max-width: 95vw;
+  }
+}
+@media (min-width: 1536px) {
+  .service-card,
+  .bg-white.rounded-lg.shadow-xl.border.border-blue-200[role="article"] {
+    width: 1600px;
+    max-width: 98vw;
+  }
+}
